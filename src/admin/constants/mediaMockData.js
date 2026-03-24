@@ -1,0 +1,73 @@
+/**
+ * Mock media library entries.
+ * MOCK DATA - Replace with real storage/CDN integration when backend is ready.
+ */
+
+export const MOCK_MEDIA = [
+  {
+    id: 'media-001',
+    name: 'mangonada-grande.jpg',
+    url: null,
+    type: 'image/jpeg',
+    size: 245000,
+    width: 800,
+    height: 600,
+    usedIn: ['menu-001'],
+    uploadedAt: '2026-01-15T10:00:00Z',
+  },
+  {
+    id: 'media-002',
+    name: 'fresas-con-crema.jpg',
+    url: null,
+    type: 'image/jpeg',
+    size: 312000,
+    width: 800,
+    height: 600,
+    usedIn: ['menu-002'],
+    uploadedAt: '2026-01-15T10:00:00Z',
+  },
+  {
+    id: 'media-003',
+    name: 'elote-preparado.jpg',
+    url: null,
+    type: 'image/jpeg',
+    size: 198000,
+    width: 800,
+    height: 600,
+    usedIn: ['menu-003'],
+    uploadedAt: '2026-01-15T10:00:00Z',
+  },
+  {
+    id: 'media-004',
+    name: 'storefront-main.jpg',
+    url: null,
+    type: 'image/jpeg',
+    size: 520000,
+    width: 1200,
+    height: 800,
+    usedIn: [],
+    uploadedAt: '2026-01-10T10:00:00Z',
+  },
+  {
+    id: 'media-005',
+    name: 'watermelon-loca-special.jpg',
+    url: null,
+    type: 'image/jpeg',
+    size: 410000,
+    width: 800,
+    height: 600,
+    usedIn: ['special-001'],
+    uploadedAt: '2026-03-01T10:00:00Z',
+  },
+  {
+    id: 'media-006',
+    name: 'family-platter.jpg',
+    url: null,
+    type: 'image/jpeg',
+    size: 380000,
+    width: 1000,
+    height: 667,
+    usedIn: ['special-003'],
+    uploadedAt: '2026-01-05T10:00:00Z',
+  },
+];

@@ -1,0 +1,63 @@
+/**
+ * Mock specials seeded from existing content.js SPECIALS.
+ * MOCK DATA - Replace with real API data when backend is ready.
+ */
+
+export const MOCK_SPECIALS = [
+  {
+    id: 'special-001',
+    title: 'Watermelon Loca',
+    description: 'A hollowed watermelon loaded with fresh fruit, chamoy, lime, and tajin. Perfect for sharing.',
+    price: 12.99,
+    image: null,
+    active: true,
+    featured: true,
+    startDate: '2026-06-01',
+    endDate: '2026-08-31',
+    badge: 'Summer Special',
+    createdAt: '2026-03-01T10:00:00Z',
+    updatedAt: '2026-03-20T14:00:00Z',
+  },
+  {
+    id: 'special-002',
+    title: 'Mango Chamoy Sundae',
+    description: 'Layers of mango ice cream, chamoy sauce, fresh mango chunks, and crunchy topping.',
+    price: 8.99,
+    image: null,
+    active: true,
+    featured: false,
+    startDate: '2026-03-15',
+    endDate: '2026-05-31',
+    badge: 'New This Season',
+    createdAt: '2026-03-10T10:00:00Z',
+    updatedAt: '2026-03-18T12:00:00Z',
+  },
+  {
+    id: 'special-003',
+    title: 'Family Fruit Platter',
+    description: 'A generous tray of fresh seasonal fruits, sliced and ready to enjoy. Feeds 4-6 people.',
+    price: 24.99,
+    image: null,
+    active: true,
+    featured: true,
+    startDate: '2026-01-01',
+    endDate: '2026-12-31',
+    badge: 'Great for Groups',
+    createdAt: '2026-01-05T10:00:00Z',
+    updatedAt: '2026-03-15T10:00:00Z',
+  },
+  {
+    id: 'special-004',
+    title: 'Valentine Corazon Cup',
+    description: 'Heart-shaped fruit arrangement with strawberries, chocolate drizzle, and whipped cream.',
+    price: 14.99,
+    image: null,
+    active: false,
+    featured: false,
+    startDate: '2026-02-01',
+    endDate: '2026-02-15',
+    badge: 'Seasonal',
+    createdAt: '2026-01-20T10:00:00Z',
+    updatedAt: '2026-02-16T10:00:00Z',
+  },
+];

@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Acme Corp \u2013 Premium Solutions for Modern Business',
+  title: 'Fruteria del Sol \u2013 Fresh Fruit Treats & Frozen Favorites',
   description:
-    'Acme Corp delivers tailored solutions that drive measurable results. Schedule a consultation today.',
+    'Handcrafted mangonadas, fresh fruit cups, ice cream, and more. Made daily with love. Order ahead for pickup or delivery.',
 };
 
 export default function RootLayout({ children }) {

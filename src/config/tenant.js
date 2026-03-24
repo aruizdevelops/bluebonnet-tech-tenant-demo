@@ -1,41 +1,63 @@
 /**
- * Tenant-specific configuration for the demo app.
- * Overrides core theme palette, typography, and component styles.
- * Replace these values when customizing for a specific business.
+ * Tenant configuration for Fruteria del Sol demo.
+ * Light-mode, warm, fruit-forward theme for a fruteria/neveria business.
  */
 const tenantConfig = {
-  id: 'demo-tenant',
-  name: 'Acme Corp',
+  id: 'fruteria-del-sol',
+  name: 'Fruteria del Sol',
   logo: null,
   theme: {
     palette: {
+      mode: 'light',
       primary: {
-        main: '#FF6B35',
-        light: '#FF8A5C',
-        dark: '#D45A2D',
+        main: '#E07830',
+        light: '#F09848',
+        dark: '#C06020',
         contrastText: '#FFFFFF',
       },
       secondary: {
-        main: '#00D4AA',
-        light: '#33DDBB',
-        dark: '#00A888',
-        contrastText: '#000000',
+        main: '#43A047',
+        light: '#66BB6A',
+        dark: '#2E7D32',
+        contrastText: '#FFFFFF',
       },
       background: {
-        default: '#0B0B12',
-        paper: '#13131D',
+        default: '#FFF8F0',
+        paper: '#FFFFFF',
       },
+      text: {
+        primary: '#2D1810',
+        secondary: '#6B5A4E',
+      },
+      error: {
+        main: '#D32F2F',
+      },
+      warning: {
+        main: '#F9A825',
+      },
+      success: {
+        main: '#43A047',
+      },
+      info: {
+        main: '#E07830',
+      },
+      divider: 'rgba(45, 24, 16, 0.10)',
     },
     typography: {
       h1: {
-        fontSize: 'clamp(2.5rem, 1.5rem + 3.5vw, 4rem)',
+        fontSize: 'clamp(2.25rem, 1.5rem + 3vw, 3.75rem)',
+        fontWeight: 800,
         lineHeight: 1.1,
         letterSpacing: '-0.02em',
       },
       h2: {
-        fontSize: 'clamp(2rem, 1.25rem + 2.5vw, 3rem)',
+        fontSize: 'clamp(1.75rem, 1.15rem + 2.2vw, 2.75rem)',
+        fontWeight: 700,
         lineHeight: 1.15,
         letterSpacing: '-0.01em',
+      },
+      h5: {
+        fontWeight: 600,
       },
       body1: {
         fontSize: '1.0625rem',
@@ -48,20 +70,23 @@ const tenantConfig = {
           root: {
             borderRadius: 50,
             padding: '10px 28px',
+            fontWeight: 600,
+            textTransform: 'none',
           },
           containedPrimary: {
-            background: 'linear-gradient(135deg, #FF6B35 0%, #FF8A5C 100%)',
-            boxShadow: '0 4px 20px rgba(255, 107, 53, 0.3)',
+            background: 'linear-gradient(135deg, #E07830 0%, #F09848 100%)',
+            boxShadow: '0 4px 16px rgba(224, 120, 48, 0.30)',
             '&:hover': {
-              background: 'linear-gradient(135deg, #D45A2D 0%, #FF6B35 100%)',
-              boxShadow: '0 6px 28px rgba(255, 107, 53, 0.45)',
+              background: 'linear-gradient(135deg, #C06020 0%, #E07830 100%)',
+              boxShadow: '0 6px 24px rgba(224, 120, 48, 0.40)',
             },
           },
           outlinedPrimary: {
-            borderColor: 'rgba(255, 107, 53, 0.5)',
+            borderColor: 'rgba(224, 120, 48, 0.5)',
+            color: '#E07830',
             '&:hover': {
-              borderColor: '#FF6B35',
-              backgroundColor: 'rgba(255, 107, 53, 0.08)',
+              borderColor: '#E07830',
+              backgroundColor: 'rgba(224, 120, 48, 0.06)',
             },
           },
           sizeLarge: {
@@ -73,7 +98,9 @@ const tenantConfig = {
       MuiCard: {
         styleOverrides: {
           root: {
-            backgroundColor: '#13131D',
+            backgroundColor: '#FFFFFF',
+            border: '1px solid rgba(45, 24, 16, 0.08)',
+            boxShadow: '0 2px 12px rgba(45, 24, 16, 0.06)',
             transition:
               'transform 300ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1)',
           },
@@ -89,8 +116,9 @@ const tenantConfig = {
     },
   },
   features: {
-    analytics: true,
-    userManagement: true,
+    onlineOrdering: true,
+    loyalty: true,
+    multiLocation: true,
   },
 };
 
