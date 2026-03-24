@@ -81,6 +81,11 @@ function AdminShellInner({ children }) {
           navItems={getAdminNavItems(t)}
           activePath={pathname}
           sx={{
+            '& .MuiListItemText-primary': {
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            },
             '& .MuiListItemButton-root.Mui-selected': {
               bgcolor: 'rgba(224, 120, 48, 0.12)',
               '&:hover': {
