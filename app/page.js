@@ -1,66 +1,86 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import { Typography, Card, CardContent, Grid, Chip, Stack } from '@mui/material';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import GroupIcon from '@mui/icons-material/Group';
+import {
+  TenantProvider,
+  CoreThemeProvider,
+  AppShell,
+  PageContainer,
+  StatusChip,
+} from '@bluebonnet-tech/core';
+import tenantConfig from '../src/config/tenant';
+import { TenantBanner } from '../src/components/TenantBanner';
+
+const stats = [
+  { label: 'Orders Today', value: '284', change: '+18%', icon: <StorefrontIcon /> },
+  { label: 'Revenue', value: '$23.5K', change: '+12%', icon: <TrendingUpIcon /> },
+  { label: 'Customers', value: '1,429', change: '+7%', icon: <GroupIcon /> },
+  { label: 'Satisfaction', value: '96%', change: '+2%', icon: <TrendingUpIcon /> },
+];
+
+const navItems = [
+  { label: 'Dashboard', icon: <StorefrontIcon />, path: '/' },
+  { label: 'Orders', icon: <StorefrontIcon />, path: '/orders' },
+  { label: 'Customers', icon: <GroupIcon />, path: '/customers' },
+  { label: 'Analytics', icon: <TrendingUpIcon />, path: '/analytics' },
+];
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <TenantProvider config={tenantConfig}>
+      <CoreThemeProvider>
+        <AppShell navItems={navItems}>
+          <PageContainer
+            title="Dashboard"
+            subtitle="Welcome back. Here's your daily overview."
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <TenantBanner />
+
+            <Grid container spacing={3} sx={{ mb: 4 }}>
+              {stats.map((stat) => (
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={stat.label}>
+                  <Card>
+                    <CardContent>
+                      <Stack direction="row" justifyContent="space-between" alignItems="center">
+                        <Typography variant="overline" color="text.secondary">
+                          {stat.label}
+                        </Typography>
+                        {stat.icon}
+                      </Stack>
+                      <Typography variant="h3" sx={{ my: 1 }}>
+                        {stat.value}
+                      </Typography>
+                      <Chip
+                        label={stat.change}
+                        size="small"
+                        color="success"
+                        variant="outlined"
+                      />
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+
+            <Card>
+              <CardContent sx={{ p: 4 }}>
+                <Typography variant="h4" gutterBottom>
+                  Tenant Status
+                </Typography>
+                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                  <StatusChip status="active" label="Orders – Live" />
+                  <StatusChip status="active" label="Analytics – Live" />
+                  <StatusChip status="pending" label="Payments – Setup Required" />
+                  <StatusChip status="inactive" label="Notifications – Disabled" />
+                </Stack>
+              </CardContent>
+            </Card>
+          </PageContainer>
+        </AppShell>
+      </CoreThemeProvider>
+    </TenantProvider>
   );
 }
