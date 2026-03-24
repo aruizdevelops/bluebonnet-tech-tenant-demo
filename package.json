@@ -1,25 +1,14 @@
 {
-  "name": "@bluebonnet-tech/core",
+  "name": "@bluebonnet-tech/tenant-demo",
   "version": "0.1.0",
   "private": true,
-  "main": "./src/index.js",
-  "files": [
-    "src"
-  ],
-  "exports": {
-    ".": "./src/index.js",
-    "./theme": "./src/theme/index.js",
-    "./components": "./src/components/index.js",
-    "./providers": "./src/providers/index.js",
-    "./hooks": "./src/hooks/index.js",
-    "./constants": "./src/constants/index.js"
-  },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start"
   },
   "dependencies": {
+    "@bluebonnet-tech/core": "file:../bluebonnet-tech-core",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
