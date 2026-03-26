@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
-    "build": "next build",
+    "dev": "next dev --webpack -p 3001",
+    "build": "next build --webpack",
     "start": "next start"
   },
   "dependencies": {
+    "@bluebonnet-tech/core": "file:../bluebonnet-tech-core",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
