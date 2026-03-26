@@ -1,0 +1,11 @@
+export { default as HomePage } from './HomePage';
+export { default as Navigation } from './Navigation';
+export { default as Hero } from './Hero';
+export { default as FeaturedSmoothies } from './FeaturedSmoothies';
+export { default as MenuPreview } from './MenuPreview';
+export { default as NutritionHighlights } from './NutritionHighlights';
+export { default as AboutSection } from './AboutSection';
+export { default as PromotionsSection } from './PromotionsSection';
+export { default as TestimonialsSection } from './TestimonialsSection';
+export { default as CtaBanner } from './CtaBanner';
+export { default as Footer } from './Footer';
