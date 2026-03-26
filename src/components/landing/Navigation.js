@@ -51,7 +51,7 @@ export default function Navigation({ content }) {
             <Typography
               variant="h6"
               component="a"
-              href="#"
+              href="/"
               sx={{
                 fontWeight: 700,
                 letterSpacing: '-0.01em',
@@ -96,7 +96,7 @@ export default function Navigation({ content }) {
             <Button
               variant="contained"
               color="primary"
-              href="#contact"
+              href={content.ctaHref || '/#contact'}
               sx={{ display: { xs: 'none', md: 'flex' } }}
             >
               {content.ctaLabel}
@@ -157,7 +157,7 @@ export default function Navigation({ content }) {
               variant="contained"
               color="primary"
               fullWidth
-              href="#contact"
+              href={content.ctaHref || '/#contact'}
               onClick={handleNavClick}
             >
               {content.ctaLabel}
