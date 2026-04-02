@@ -18,8 +18,11 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import LanguagePicker from './LanguagePicker';
 import { useTranslation } from '../i18n/useTranslation';
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 /**
  * Light-mode aware Navigation for the fruteria tenant demo.
@@ -128,6 +131,26 @@ export default function Navigation({ content }) {
               {content.ctaLabel}
             </Button>
 
+            <Button
+              component="a"
+              href={`${basePath}/admin`}
+              startIcon={<AdminPanelSettingsIcon sx={{ fontSize: 18 }} />}
+              sx={{
+                display: { xs: 'none', md: 'flex' },
+                ml: 1.5,
+                color: scrolled ? 'text.secondary' : 'rgba(255,255,255,0.65)',
+                fontWeight: 500,
+                fontSize: '0.8rem',
+                transition: 'color 300ms',
+                '&:hover': {
+                  color: scrolled ? 'text.primary' : '#FFFFFF',
+                  backgroundColor: 'transparent',
+                },
+              }}
+            >
+              Admin Demo
+            </Button>
+
             <IconButton
               aria-label={t('a11y.openNavMenu')}
               edge="end"
@@ -194,6 +217,24 @@ export default function Navigation({ content }) {
           </ListItem>
           <ListItem disablePadding sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
             <LanguagePicker />
+          </ListItem>
+          <ListItem disablePadding sx={{ mt: 1 }}>
+            <ListItemButton
+              component="a"
+              href={`${basePath}/admin`}
+              onClick={handleNavClick}
+              sx={{ borderRadius: 2, mb: 0.5 }}
+            >
+              <AdminPanelSettingsIcon sx={{ fontSize: 18, mr: 1.5, color: 'text.secondary' }} />
+              <ListItemText
+                primary="Admin Demo"
+                primaryTypographyProps={{
+                  fontWeight: 500,
+                  fontSize: '0.875rem',
+                  color: 'text.secondary',
+                }}
+              />
+            </ListItemButton>
           </ListItem>
         </List>
       </Drawer>
