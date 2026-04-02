@@ -19,8 +19,7 @@ export default function Hero({ content }) {
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        background: (theme) =>
-          `linear-gradient(145deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 40%, #8B3A0F 100%)`,
+        background: 'linear-gradient(145deg, #E5502D 0%, #FF6B4A 25%, #FFB830 50%, #00B4A0 75%, #008F7D 100%)',
         '&::before': {
           content: '""',
           position: 'absolute',
