@@ -9,6 +9,7 @@ const nextConfig = {
   trailingSlash: true,
   images: { unoptimized: true },
   basePath: '/bluebonnet-tech-tenant-demo',
+  env: { NEXT_PUBLIC_BASE_PATH: '/bluebonnet-tech-tenant-demo' },
   reactStrictMode: true,
   poweredByHeader: false,
   transpilePackages: ['@bluebonnet-tech/core'],

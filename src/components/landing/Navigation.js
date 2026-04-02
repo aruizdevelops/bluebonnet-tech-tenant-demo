@@ -105,6 +105,25 @@ export default function Navigation({ content }) {
               {content.ctaLabel}
             </Button>
 
+            <Button
+              component="a"
+              href={`${basePath}/admin`}
+              startIcon={<AdminPanelSettingsIcon sx={{ fontSize: 18 }} />}
+              sx={{
+                display: { xs: 'none', md: 'flex' },
+                ml: 1.5,
+                color: 'text.secondary',
+                fontWeight: 500,
+                fontSize: '0.8rem',
+                '&:hover': {
+                  color: 'text.primary',
+                  backgroundColor: 'transparent',
+                },
+              }}
+            >
+              Admin Demo
+            </Button>
+
             <IconButton
               color="inherit"
               aria-label="open navigation menu"
