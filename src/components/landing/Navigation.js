@@ -18,6 +18,9 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Navigation({ content }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -162,6 +165,24 @@ export default function Navigation({ content }) {
             >
               {content.ctaLabel}
             </Button>
+          </ListItem>
+          <ListItem disablePadding sx={{ mt: 1 }}>
+            <ListItemButton
+              component="a"
+              href={`${basePath}/admin`}
+              onClick={handleNavClick}
+              sx={{ borderRadius: 2, mb: 0.5 }}
+            >
+              <AdminPanelSettingsIcon sx={{ fontSize: 18, mr: 1.5, color: 'text.secondary' }} />
+              <ListItemText
+                primary="Admin Demo"
+                primaryTypographyProps={{
+                  fontWeight: 500,
+                  fontSize: '0.875rem',
+                  color: 'text.secondary',
+                }}
+              />
+            </ListItemButton>
           </ListItem>
         </List>
       </Drawer>
