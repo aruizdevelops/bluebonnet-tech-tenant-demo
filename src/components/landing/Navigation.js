@@ -54,7 +54,7 @@ export default function Navigation({ content }) {
             <Typography
               variant="h6"
               component="a"
-              href="/"
+              href={`${basePath}/`}
               sx={{
                 fontWeight: 700,
                 letterSpacing: '-0.01em',

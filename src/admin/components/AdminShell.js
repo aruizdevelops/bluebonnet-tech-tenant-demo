@@ -26,6 +26,8 @@ import { LanguageProvider } from '../../i18n/LanguageContext';
 import { useTranslation } from '../../i18n/useTranslation';
 import LanguagePicker from '../../components/LanguagePicker';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 function AdminShellInner({ children }) {
   const pathname = usePathname();
   const theme = useTheme();
@@ -79,7 +81,7 @@ function AdminShellInner({ children }) {
           open={isMobile ? mobileOpen : true}
           onClose={handleMenuToggle}
           navItems={getAdminNavItems(t)}
-          activePath={pathname}
+          activePath={`${basePath}${pathname}`}
           sx={{
             '& .MuiListItemText-primary': {
               whiteSpace: 'nowrap',
